@@ -13,8 +13,15 @@ export function RootComponent(props) {
     return (
 
         <div>
-            <h1><FontAwesome name="times"/>{stateJS.value}</h1>
-            <input defaultValue={stateJS.value} onChange={(event)=>store.dispatch({type:'CHANGE_VALUE',value:event.target.value})}/>
+            <input defaultValue={stateJS.name} onChange={(event)=>store.dispatch({type:'CHANGE_NAME',value:event.target.value})}/>
+            <textarea defaultValue={stateJS.name} onChange={(event)=>store.dispatch({type:'CHANGE_NAME',value:event.target.value})}/>
+
+
+
+            <ul>
+
+
+
         </div>
     );
 
