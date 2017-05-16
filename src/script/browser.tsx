@@ -22,25 +22,27 @@ window.addEventListener('load', function() {
 
 
 
-    createStateFromUri(window.location.pathname+window.location.search+window.location.hash)
-        .then((state)=>{
+    function loadStateFromUri(){
+        createStateFromUri(window.location.pathname+window.location.search+window.location.hash)
+            .then((state)=>{
 
-            app.setState(state);
+                app.setState(state);
 
-            console.log('First render...');
-            ReactDOM.render(
-                app.createJSX(),
-                root
-            );
+                console.log('First render...');
+                ReactDOM.render(
+                    app.createJSX(),
+                    root
+                );
+
+            });
+    }
+    loadStateFromUri();
 
 
-        });
 
 
-
-
-    window.onpopstate = (event) => {
-        app.setState(event.state);
+    window.onpopstate = () => {
+        loadStateFromUri();
     };
 
 
