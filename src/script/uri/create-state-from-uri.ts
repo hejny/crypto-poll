@@ -23,19 +23,19 @@ export async function createStateFromUri(uri:string){
             options: [
                 {
                     name: 'Option 1',
-                    color: '#00ff00',
+                    color: '#bceca9',
                     address: '1CAVFkxE4Em91wn6AosyavpCpbR6jYRJgF',
                     address_type: 'BTC',
                 },
                 {
                     name: 'Option 2',
-                    color: '#ff0000',
+                    color: '#eca9a9',
                     address: '171BiDVWuX6aGeB7rr4yKfSzhAMBzJEEoT',
                     address_type: 'BTC',
                 },
                 {
                     name: 'Option 3',
-                    color: '#0000ff',
+                    color: '#a3f9f9',
                     address: '1HJAfW7iAhNvnGES5uLCrnkSdQzyiju4AE',
                     address_type: 'BTC',
                 }
