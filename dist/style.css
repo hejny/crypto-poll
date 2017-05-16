@@ -1,0 +1,47 @@
+body {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  color: #000000;
+  margin: 0px;
+  padding: 0px;
+  background: #fff;
+  overflow-y: scroll; }
+
+button, .button, input[type="submit"] {
+  display: inline-block;
+  border: none;
+  padding: 0 10px;
+  margin: 2px;
+  min-width: 100px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: #0098ff;
+  color: white;
+  cursor: pointer; }
+  button:hover, .button:hover, input[type="submit"]:hover {
+    background-color: #37beff; }
+
+.poll-viewer .poll-name, .poll-editor .poll-name {
+  display: block; }
+
+.poll-viewer .poll-description, .poll-editor .poll-description {
+  display: block; }
+
+.poll-viewer ul.poll-options {
+  list-style: none;
+  margin: 0; }
+  .poll-viewer ul.poll-options li {
+    display: block;
+    height: 30px;
+    border-radius: 5px;
+    margin: 4px;
+    text-align: center;
+    cursor: pointer; }
+    .poll-viewer ul.poll-options li img {
+      display: none;
+      position: fixed;
+      bottom: 10px;
+      right: 10px; }
+    .poll-viewer ul.poll-options li:hover img {
+      display: block; }
