@@ -23,7 +23,7 @@ export function stateReducer(state,action){
 
         case 'CHANGE_DESCRIPTION':
 
-            return state.set('description',action.name);
+            return state.set('description',action.description);
 
 
         case 'CHANGE_STARTING_DATE':
