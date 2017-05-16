@@ -8,7 +8,7 @@ export async function createStateFromUri(uri:string){
     let stateJS;
     try{
 
-        const compressedState = uri.substr(1);
+        const compressedState = uri.split('#',2)[1];
         stateJS = JSON.parse(LZUTF8.decompress(compressedState,{inputEncoding:"Base64"}));
 
     }catch(error){
