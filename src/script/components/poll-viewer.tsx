@@ -12,7 +12,7 @@ export function PollViewer(props) {
 
     return (
 
-        <div className="poll-editor">
+        <div className="poll-viewer">
 
 
            <h1>{stateJS.name}</h1>

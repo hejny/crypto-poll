@@ -16,16 +16,30 @@ export async function createStateFromUri(uri:string){
         console.warn(`Something got wrong => loading default state.`);
         stateJS = {
 
-            name: '',
-            description: '',
+            name: 'Crypto poll',
+            description: 'vote by sending BTC',
             editing: true,
 
-            options: [{
-                name: '',
-                color: '#0f0fff',
-                address: '',
-                address_type: 'BTC',
-            }],
+            options: [
+                {
+                    name: 'Option 1',
+                    color: '#00ff00',
+                    address: '1CAVFkxE4Em91wn6AosyavpCpbR6jYRJgF',
+                    address_type: 'BTC',
+                },
+                {
+                    name: 'Option 2',
+                    color: '#ff0000',
+                    address: '171BiDVWuX6aGeB7rr4yKfSzhAMBzJEEoT',
+                    address_type: 'BTC',
+                },
+                {
+                    name: 'Option 3',
+                    color: '#0000ff',
+                    address: '1HJAfW7iAhNvnGES5uLCrnkSdQzyiju4AE',
+                    address_type: 'BTC',
+                }
+            ],
 
             starting_date: 0,
 
