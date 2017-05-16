@@ -4,6 +4,7 @@ export const TITLE_SEPARATOR = ' | ';
 
 export const EMPTY_OPTION = {
     name: '',
+    color: '#cccccc',
     address: '',
     address_type: 'BTC',
 };

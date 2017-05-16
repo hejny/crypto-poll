@@ -1,13 +1,10 @@
+import * as LZUTF8 from 'lzutf8';
+
+
 export async function createUriFromState(stateJS):string{
 
-
-
-    let uriParts = [];
-
-    uriParts.push(stateJS.value);
-
-
-    return `/${uriParts.join('/')}`;
+    var compressedState = LZUTF8.compress(JSON.stringify(stateJS),{outputEncoding:"Base64"});
+    return `/${compressedState}`;
 
 
 }
