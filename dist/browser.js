@@ -95,6 +95,9 @@
 	            app.setState(state);
 	            console.log('First render...');
 	            ReactDOM.render(app.createJSX(), root);
+	            create_title_from_state_ts_1.createTitleFromState(state.toJS()).then(function (title) {
+	                document.title = title;
+	            });
 	        });
 	    }
 	    loadStateFromUri();
@@ -37654,7 +37657,7 @@
 	        var titleParts;
 	        return __generator(this, function (_a) {
 	            titleParts = [];
-	            titleParts.push(stateJS.value);
+	            titleParts.push(stateJS.name);
 	            titleParts.push(config_ts_1.WEB_NAME);
 	            return [2 /*return*/, titleParts.filter(function (part) { return part !== ''; }).join(config_ts_1.TITLE_SEPARATOR)];
 	        });

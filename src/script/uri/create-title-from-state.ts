@@ -6,7 +6,7 @@ export async function createTitleFromState(stateJS):string{
 
     let titleParts = [];
 
-    titleParts.push(stateJS.value);
+    titleParts.push(stateJS.name);
     titleParts.push(WEB_NAME);
 
     return titleParts.filter((part)=>part!=='').join(TITLE_SEPARATOR);

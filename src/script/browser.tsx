@@ -34,6 +34,11 @@ window.addEventListener('load', function() {
                     root
                 );
 
+
+                createTitleFromState(state.toJS()).then((title)=>{
+                    document.title = title;
+                });
+
             });
     }
     loadStateFromUri();
