@@ -1,13 +1,28 @@
+body{
+  text-align: center;
+}
+
+
 .poll-viewer, .poll-editor{
 
+  display: inline-block;
+  max-width: 800px;
+  margin-top: 10vh;
 
 
   .poll-name{
-    display: block;
+    display: inline-block;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    text-align: center;
 
   }
   .poll-description{
-    display: block;
+    display:  inline-block;
+    width: 100%;
+    text-align: center;
   }
 
   ul.poll-options{
@@ -32,18 +47,35 @@
 
 
 .poll-viewer{
+  width: 100%;
 
   ul.poll-options{
 
+    width: 100%;
     list-style: none;
     margin: 0;
+    padding: 0;
+
+
+    a{
+      text-decoration: none;
+      color: black;
+    }
+
 
     li{
 
+
       display: block;
-      height: 30px;
+      //height: px;
+      padding: 3px;
       border-radius: 5px;
       margin: 4px;
+      white-space: nowrap;
+      //min-width: 100px;
+
+
+
 
       text-align: center;
 

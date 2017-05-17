@@ -41,5 +41,11 @@ button, .button, input[type="submit"] {
 }
 
 
+.clickable{
+  cursor: Pointer;
+}
+
+
 
 @import "poll";
+@import "footer";

@@ -29,6 +29,8 @@
     "redux-devtools": "^3.3.2",
     "run-sequence": "^1.2.2",
     "source-map-loader": "^0.1.6",
+    "superagent": "^3.5.2",
+    "superagent-promise": "^1.1.0",
     "ts-loader": "^2.0.0",
     "ts-promise": "^0.3.4",
     "typescript": "^2.1.6",

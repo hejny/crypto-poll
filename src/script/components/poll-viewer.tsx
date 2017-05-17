@@ -1,12 +1,13 @@
 import * as React from "react";
 import * as FontAwesome from 'react-fontawesome';
-
+import {PollViewerOptions} from './poll-viewer-options';
 
 
 export function PollViewer(props) {
 
     const {store} = props;
     const stateJS = store.getState().toJS();
+
 
 
 
@@ -19,25 +20,8 @@ export function PollViewer(props) {
            <p>{stateJS.description}</p>
 
 
-            <ul className="poll-options">
-                {stateJS.options.map((option,option_index)=>(
-                    <li key={option_index} style={{
-                        backgroundColor: option.color,
-                        width: Math.random()*100+'%',
-                    }}>
 
-
-
-                        {option.name}
-                        <img src={`https://blockchain.info/qr?data=${option.address}&size=200`} />
-
-
-
-
-                    </li>
-                ))}
-            </ul>
-
+            <PollViewerOptions store={store}/>
 
 
 

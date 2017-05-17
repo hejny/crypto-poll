@@ -38,6 +38,18 @@ export async function createStateFromUri(uri:string){
                     color: '#a3f9f9',
                     address: '1HJAfW7iAhNvnGES5uLCrnkSdQzyiju4AE',
                     address_type: 'BTC',
+                },
+                {
+                    name: 'Option 4',
+                    color: '#ccfccc',
+                    address: '17AwBzbouUn615MPNDUAcSbuc6him8ch4u',
+                    address_type: 'BTC',
+                },
+                {
+                    name: 'Option 5',
+                    color: '#fc5cfc',
+                    address: '1B8KnmzgrHhzkQdqnLWRJ6cuEMMghXkBTs',
+                    address_type: 'BTC',
                 }
             ],
 

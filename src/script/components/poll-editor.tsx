@@ -51,6 +51,10 @@ export function PollEditor(props) {
                         </label>
 
 
+                        <span className="clickable" onClick={(event)=>store.dispatch({type:'OPTION_DELETE',option_index})}>
+                            <FontAwesome name="trash"/>
+                            Delete
+                        </span>
 
 
 
