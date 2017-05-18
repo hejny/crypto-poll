@@ -18,8 +18,27 @@ export function RootComponent(props) {
 
 
 
-            {stateJS.editing?<PollEditor store={store}/>:<PollViewer store={store}/>}
+            {stateJS.mode==='EDIT'?<PollEditor store={store}/>:<PollViewer store={store}/>}
 
+
+
+            {stateJS.mode==='PUBLISHED'?
+                <footer>
+                    Created by <a href="https://www.pavolhejny.com" target="_blank">Pavol Hejný</a>
+                    &nbsp;&nbsp;•&nbsp;&nbsp;
+                    <a href={window.location} target="_blank"><FontAwesome name="pencil"/>Create your own poll</a>
+                </footer>
+
+
+                :
+                <footer>
+                    Created by <a href="https://www.pavolhejny.com" target="_blank">Pavol Hejný</a>
+                    &nbsp;&nbsp;•&nbsp;&nbsp;
+                    <a href="https://github.com/hejny/crypto-poll" target="_blank"><FontAwesome name="github"/>Source code</a>
+                    &nbsp;&nbsp;•&nbsp;&nbsp;
+                    <a href="https://blockchain.info/address/17AwBzbouUn615MPNDUAcSbuc6him8ch4u" target="_blank">Donate in BTC</a>
+                </footer>
+            }
 
 
 

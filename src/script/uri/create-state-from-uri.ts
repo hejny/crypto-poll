@@ -18,7 +18,7 @@ export async function createStateFromUri(uri:string){
 
             name: 'Crypto poll',
             description: 'vote by sending BTC',
-            editing: true,
+            mode: 'EDIT',
 
             options: [
                 {

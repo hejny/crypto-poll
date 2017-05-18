@@ -32,7 +32,7 @@ export class App{
 
         this._store = createStore(
             stateReducer//todo backward compatibility
-            ,Immutable.fromJS(state)
+            ,state
         );
         this._store.subscribe(this._triggerSubscribers.bind(this));
         this._stateInitialized = true;
@@ -42,7 +42,7 @@ export class App{
 
     getState(){
         this._stateInitializedCheck();
-        return this._store.getState().toJS();
+        return this._store.getState();
     }
 
 

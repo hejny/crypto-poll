@@ -35,7 +35,7 @@ window.addEventListener('load', function() {
                 );
 
 
-                createTitleFromState(state.toJS()).then((title)=>{
+                createTitleFromState(state).then((title)=>{
                     document.title = title;
                 });
 

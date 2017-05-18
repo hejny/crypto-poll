@@ -1,12 +1,20 @@
 
 footer{
 
-  position: fixed;
+  font-size: 0.9rem;
+  color: #888888;
+  a{
+    color: #888888;
+  }
+
+
+  position: absolute;
   background-color: white;
 
   bottom: 0;
   left: 0;
   right: 0;
+  //height: 20px;
 
   text-align: center;
 

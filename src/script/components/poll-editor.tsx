@@ -3,6 +3,9 @@ import * as FontAwesome from 'react-fontawesome';
 
 import {EMPTY_OPTION} from '../config.ts';
 
+import {stateReducer} from '../reducers/state';
+import {createUriFromState} from '../uri/create-uri-from-state';
+
 
 export function PollEditor(props) {
 
@@ -10,8 +13,11 @@ export function PollEditor(props) {
     const stateJS = store.getState().toJS();
 
 
-    const viewUrl = window.location;
-    const iFrameHtml = `<iframe src="${viewUrl}">`;
+
+
+    const viewUrl = createUriFromState(stateReducer(store.getState(),{type:'MODE_PUBLISHED'}));
+    const iFrameHtml = `<iframe width="300" height="400" frameborder="0" src="${viewUrl}">`;
+
 
 
     return (
@@ -74,7 +80,7 @@ export function PollEditor(props) {
 
 
 
-            <button onClick={()=>store.dispatch({type:'EDITING_OFF'})}>
+            <button onClick={()=>store.dispatch({type:'MODE_PREVIEW'})}>
                 <FontAwesome name="check"/>
                 Show poll
             </button>
@@ -83,26 +89,23 @@ export function PollEditor(props) {
 
 
             <div className="about">
-                About
             </div>
 
 
             <div className="share">
                 <h2>iframe</h2>
                 <textarea value={iFrameHtml}/>
+
+
+                {/*<div dangerouslySetInnerHTML={{__html: iFrameHtml}} />*/}
+
+
                 <h2>URL</h2>
                 <textarea value={viewUrl}/>
             </div>
 
 
 
-            <footer>
-                Created by <a href="https://www.pavolhejny.com" target="_blank">Pavol Hejný</a>
-                &nbsp;&nbsp;•&nbsp;&nbsp;
-                <a href="https://github.com/hejny/crypto-poll" target="_blank"><FontAwesome name="github"/>Source code</a>
-                &nbsp;&nbsp;•&nbsp;&nbsp;
-                <a href="https://blockchain.info/address/17AwBzbouUn615MPNDUAcSbuc6him8ch4u" target="_blank">Donate in BTC</a>
-            </footer>
 
 
 

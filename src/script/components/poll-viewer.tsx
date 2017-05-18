@@ -25,19 +25,17 @@ export function PollViewer(props) {
 
 
 
-            <button onClick={()=>store.dispatch({type:'EDITING_ON'})}>
-                <FontAwesome name="pencil"/>
-                Edit poll
-            </button>
+            {stateJS.mode==='PREVIEW'?
+                <button onClick={()=>store.dispatch({type:'MODE_EDIT'})}>
+                    <FontAwesome name="pencil"/>
+                    Edit poll
+                </button>
+                :''}
 
 
 
 
-            <footer>
-                Created by <a href="https://www.pavolhejny.com" target="_blank">Pavol Hejný</a>
-                &nbsp;&nbsp;•&nbsp;&nbsp;
-                <a href={window.location} target="_blank"><FontAwesome name="pencil"/>Create your own poll</a>
-            </footer>
+
 
 
 

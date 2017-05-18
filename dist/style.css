@@ -43,7 +43,7 @@ body {
     text-align: center; }
 
 .poll-viewer {
-  width: 100%; }
+  width: calc(100% - 50px); }
   .poll-viewer ul.poll-options {
     width: 100%;
     list-style: none;
@@ -67,15 +67,22 @@ body {
         right: 10px; }
       .poll-viewer ul.poll-options li:hover img {
         display: block; }
+  .poll-viewer .updated {
+    color: #888888;
+    font-size: 0.8rem; }
 
 .poll-editor {
   margin-top: 10vh; }
 
 footer {
-  position: fixed;
+  font-size: 0.9rem;
+  color: #888888;
+  position: absolute;
   background-color: white;
   bottom: 0;
   left: 0;
   right: 0;
   text-align: center;
   padding: 4px; }
+  footer a {
+    color: #888888; }

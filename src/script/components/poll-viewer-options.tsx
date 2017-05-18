@@ -68,6 +68,7 @@ export class PollViewerOptions extends React.Component {
 
 
         const maxAmount = this.state.amounts.reduce((amount, biggest)=>amount < biggest ? biggest : amount, 0);
+        const sumAmount = this.state.amounts.reduce((amount, sum)=>sum+amount, 0);
 
 
         return (
@@ -91,7 +92,7 @@ export class PollViewerOptions extends React.Component {
                                         <FontAwesome name='exclamation-triangle' />Wrong address
                                     </div>
                                     :<div>
-                                        {Math.round(this.state.amounts[option_index]/maxAmount*100*100)/100}%
+                                        {Math.round(this.state.amounts[option_index]/sumAmount*100*100)/100}%
                                     </div>}
 
                                 {/*<img src={`https://blockchain.info/qr?data=${option.address}&size=200`} />*/}
@@ -104,7 +105,10 @@ export class PollViewerOptions extends React.Component {
                         </a>
                     ))}
                 </ul>
-                {moment(this.state.updated).calendar()}
+                <div className="updated">
+                    Updated {moment(this.state.updated).calendar()}
+                </div>
+
             </div>
         );
     }

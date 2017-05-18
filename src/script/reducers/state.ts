@@ -9,13 +9,13 @@ export function stateReducer(state,action){
     switch (action.type) {
 
 
-        case 'EDITING_ON':
+        case 'MODE_EDIT':
+            return state.set('mode','EDIT');
+        case 'MODE_PREVIEW':
+            return state.set('mode','PREVIEW');
+        case 'MODE_PUBLISHED':
+            return state.set('mode','PUBLISHED');
 
-            return state.set('editing',true);
-
-        case 'EDITING_OFF':
-
-            return state.set('editing',false);
 
         case 'CHANGE_NAME':
 
