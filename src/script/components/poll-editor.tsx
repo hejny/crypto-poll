@@ -10,6 +10,9 @@ export function PollEditor(props) {
     const stateJS = store.getState().toJS();
 
 
+    const viewUrl = window.location;
+    const iFrameHtml = `<iframe src="${viewUrl}">`;
+
 
     return (
 
@@ -75,6 +78,33 @@ export function PollEditor(props) {
                 <FontAwesome name="check"/>
                 Show poll
             </button>
+
+
+
+
+            <div className="about">
+                About
+            </div>
+
+
+            <div className="share">
+                <h2>iframe</h2>
+                <textarea value={iFrameHtml}/>
+                <h2>URL</h2>
+                <textarea value={viewUrl}/>
+            </div>
+
+
+
+            <footer>
+                Created by <a href="https://www.pavolhejny.com" target="_blank">Pavol Hejný</a>
+                &nbsp;&nbsp;•&nbsp;&nbsp;
+                <a href="https://github.com/hejny/crypto-poll" target="_blank"><FontAwesome name="github"/>Source code</a>
+                &nbsp;&nbsp;•&nbsp;&nbsp;
+                <a href="https://blockchain.info/address/17AwBzbouUn615MPNDUAcSbuc6him8ch4u" target="_blank">Donate in BTC</a>
+            </footer>
+
+
 
 
         </div>

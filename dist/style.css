@@ -30,8 +30,7 @@ body {
 
 .poll-viewer, .poll-editor {
   display: inline-block;
-  max-width: 800px;
-  margin-top: 10vh; }
+  max-width: 800px; }
   .poll-viewer .poll-name, .poll-editor .poll-name {
     display: inline-block;
     width: 100%;
@@ -68,6 +67,9 @@ body {
         right: 10px; }
       .poll-viewer ul.poll-options li:hover img {
         display: block; }
+
+.poll-editor {
+  margin-top: 10vh; }
 
 footer {
   position: fixed;

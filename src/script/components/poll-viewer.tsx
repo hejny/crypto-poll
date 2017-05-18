@@ -31,6 +31,17 @@ export function PollViewer(props) {
             </button>
 
 
+
+
+            <footer>
+                Created by <a href="https://www.pavolhejny.com" target="_blank">Pavol Hejný</a>
+                &nbsp;&nbsp;•&nbsp;&nbsp;
+                <a href={window.location} target="_blank"><FontAwesome name="pencil"/>Create your own poll</a>
+            </footer>
+
+
+
+
         </div>
     );
 
