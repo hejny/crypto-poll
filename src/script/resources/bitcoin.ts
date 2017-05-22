@@ -19,18 +19,24 @@ export class BitcoinAddress implements ICryptocoinAddress{
 
 
 
-    async getAddresInputs(since:Date):number{
+    async getAddresInputs(start_date:Date):number{
 
 
+        try {
 
-        const response = await superagentPromise('GET', `https://blockchain.info/q/getreceivedbyaddress/${this._address}?start_time=1484705477367&format=plain`);
-        //console.log(response);
-        if(response.text===''){
-            return -1;
+
+            const response = await superagentPromise('GET', `https://blockchain.info/q/getreceivedbyaddress/${this._address}?start_time=${Math.round(start_date.getTime())}&format=plain`);
+            //console.log(response);
+            if (response.text === '') {
+                return NaN;
+            }
+
+            const btc = parseInt(response.text) / 100000000;
+            return btc;
+
+        }catch(error){
+            return NaN;
         }
-
-        const btc = parseInt(response.text)/100000000;
-        return btc;
 
     }
 

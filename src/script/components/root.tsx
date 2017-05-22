@@ -26,7 +26,7 @@ export function RootComponent(props) {
                 <footer>
                     Created by <a href="https://www.pavolhejny.com" target="_blank">Pavol Hejný</a>
                     &nbsp;&nbsp;•&nbsp;&nbsp;
-                    <a href={window.location} target="_blank"><FontAwesome name="pencil"/>Create your own poll</a>
+                    <a href={document.location.toString().split('#')[0]} target="_blank"><FontAwesome name="pencil"/>Create your own poll</a>
                 </footer>
 
 

@@ -9,13 +9,16 @@ import {BitcoinAddress} from "../resources/bitcoin.ts";
 
 export class PollViewerOptions extends React.Component {
 
+    private _start_date:Date;
     private _options:Object[];
 
     constructor(props) {
 
         super(props);
         const {store} = props;
-        this._options = store.getState().toJS().options;
+        const stateJS = store.getState().toJS();
+        this._start_date = new Date(stateJS.start_date);
+        this._options = stateJS.options;
 
 
 
@@ -36,7 +39,7 @@ export class PollViewerOptions extends React.Component {
 
 
             const bitcoinAddress = new BitcoinAddress(option.address);
-            return bitcoinAddress.getAddresInputs(new Date());
+            return bitcoinAddress.getAddresInputs(this._start_date);
 
 
         })).then((amounts)=>{
@@ -68,7 +71,7 @@ export class PollViewerOptions extends React.Component {
 
 
         const maxAmount = this.state.amounts.reduce((amount, biggest)=>amount < biggest ? biggest : amount, 0);
-        const sumAmount = this.state.amounts.reduce((amount, sum)=>sum+amount, 0);
+        const sumAmount = this.state.amounts.reduce((amount, sum)=>isNaN(amount)?sum:sum+amount, 0);
 
 
         return (
@@ -81,21 +84,28 @@ export class PollViewerOptions extends React.Component {
 
                             <li key={option_index} style={{
                                     backgroundColor: option.color,
-                                    width: this.state.amounts[option_index]/maxAmount*100+'%',
+                                    width: isNaN(this.state.amounts[option_index])?0:this.state.amounts[option_index]/maxAmount*100+'%',
                                 }}>
 
 
 
                                 {option.name}
-                                {(this.state.amounts[option_index]===-1)?
+                                {isNaN(this.state.amounts[option_index])?
                                     <div>
                                         <FontAwesome name='exclamation-triangle' />Wrong address
                                     </div>
                                     :<div>
-                                        {Math.round(this.state.amounts[option_index]/sumAmount*100*100)/100}%
+                                        {sumAmount===0?'':(Math.round(this.state.amounts[option_index]/sumAmount*100*100)/100+'%')}
+
+                                        <div className="address">
+                                            {option.address}
+                                            <img src={`https://blockchain.info/qr?data=${option.address}&size=200`} />
+                                        </div>
+
+
                                     </div>}
 
-                                {/*<img src={`https://blockchain.info/qr?data=${option.address}&size=200`} />*/}
+                                {/**/}
 
 
 

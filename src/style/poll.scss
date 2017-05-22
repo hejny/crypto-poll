@@ -73,6 +73,7 @@ body{
       margin: 4px;
       white-space: nowrap;
       //min-width: 100px;
+      transition: width 2s;
 
 
 
@@ -82,19 +83,23 @@ body{
 
       cursor: pointer;
 
-      img{
+      .address{
         display: none;
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-
       }
 
-      &:hover{
-        img{
+      /*&:hover{
+        //width: 100%!important;
+        .address{
           display: block;
+
+          img{
+            display: block;
+          }
+          position: fixed;
+          bottom: 10px;
+          right: 10px;
         }
-      }
+      }*/
 
 
     }
@@ -110,4 +115,15 @@ body{
 
 .poll-editor{
   margin-top: 10vh;
+
+
+
+  .poll-date{
+
+    display: block;
+
+    input.invalid{
+      background-color: red;
+    }
+  }
 }

@@ -58,21 +58,34 @@ body {
       border-radius: 5px;
       margin: 4px;
       white-space: nowrap;
+      transition: width 2s;
       text-align: center;
-      cursor: pointer; }
-      .poll-viewer ul.poll-options li img {
-        display: none;
-        position: fixed;
-        bottom: 10px;
-        right: 10px; }
-      .poll-viewer ul.poll-options li:hover img {
-        display: block; }
+      cursor: pointer;
+      /*&:hover{
+        //width: 100%!important;
+        .address{
+          display: block;
+
+          img{
+            display: block;
+          }
+          position: fixed;
+          bottom: 10px;
+          right: 10px;
+        }
+      }*/ }
+      .poll-viewer ul.poll-options li .address {
+        display: none; }
   .poll-viewer .updated {
     color: #888888;
     font-size: 0.8rem; }
 
 .poll-editor {
   margin-top: 10vh; }
+  .poll-editor .poll-date {
+    display: block; }
+    .poll-editor .poll-date input.invalid {
+      background-color: red; }
 
 footer {
   font-size: 0.9rem;

@@ -3,6 +3,20 @@ import * as LZUTF8 from 'lzutf8';
 
 
 
+function yyyymmdd(date){
+    var mm = date.getMonth() + 1; // getMonth() is zero-based
+    var dd = date.getDate();
+
+    return [date.getFullYear(),
+        (mm>9 ? '' : '0') + mm,
+        (dd>9 ? '' : '0') + dd
+    ].join('-');
+}
+
+
+
+
+
 export async function createStateFromUri(uri:string){
 
     let stateJS;
@@ -12,6 +26,7 @@ export async function createStateFromUri(uri:string){
         stateJS = JSON.parse(LZUTF8.decompress(compressedState,{inputEncoding:"Base64"}));
 
     }catch(error){
+
 
         console.warn(`Something got wrong => loading default state.`);
         stateJS = {
@@ -53,7 +68,7 @@ export async function createStateFromUri(uri:string){
                 }
             ],
 
-            starting_date: 0,
+            start_date: yyyymmdd(new Date()),
 
             httpStatus: 200,
 

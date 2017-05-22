@@ -18,17 +18,14 @@ export function stateReducer(state,action){
 
 
         case 'CHANGE_NAME':
-
-            return state.set('name',action.name);
+            return state.set('name',action.value);
 
         case 'CHANGE_DESCRIPTION':
+            return state.set('description',action.value);
 
-            return state.set('description',action.description);
 
-
-        case 'CHANGE_STARTING_DATE':
-
-            return state.set('starting_date',action.starting_date.getTime());
+        case 'CHANGE_START_DATE':
+            return state.set('start_date',action.value);
 
 
         case 'OPTION_ADD':
